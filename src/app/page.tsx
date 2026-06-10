@@ -7,97 +7,72 @@ export const metadata: Metadata = {
 }
 
 const services = [
-  { title: "Owner's Engineer", desc: "Independent technical oversight of your SCADA and telecom scope — protecting developer interests from FEED through commissioning handover. No vendor, no platform." },
-  { title: "SCADA Engineering", desc: "Architecture review, signal register ownership, interface matrix management, and vendor-neutral specification authoring for offshore wind control systems." },
+  { title: "Owner's Engineer", desc: "Independent technical oversight of your SCADA and telecom scope — protecting developer interests from FEED through commissioning handover." },
+  { title: "SCADA Engineering", desc: "Architecture review, signal register ownership, interface matrix management, and vendor-neutral specification authoring." },
   { title: "Commissioning", desc: "FAT, SAT and SIT coordination, ITP witness, punch list governance, and commissioning documentation across all SCADA and telecom systems." },
   { title: "Interface Management", desc: "Structured management of technical interfaces between SCADA, protection, telecom, and third-party systems — catching conflicts before they become delays." },
   { title: "OT Cybersecurity", desc: "IEC 62443 zone and conduit design, OT network segmentation, NIS2 compliance review, and cybersecurity scope ownership for offshore OT environments." },
   { title: "Telecom & Networks", desc: "Offshore fibre, MPLS, PAGA, private LTE and VSAT satellite backup design and commissioning. OT network architecture and vendor coordination." },
 ]
 
-const stats = [
-  { n: '15+', l: 'Years offshore wind' },
-  { n: '10+', l: 'Major projects' },
-  { n: '10+ GW', l: 'Capacity delivered' },
-  { n: '6', l: 'Developer clients' },
-]
-
 export default function HomePage() {
   return (
     <main>
-
-      {/* ── HERO ── */}
-      <section style={{ minHeight: '88vh', display: 'flex', alignItems: 'center', padding: '80px 24px 60px' }}>
-        <div style={{ maxWidth: 1120, margin: '0 auto', width: '100%' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'center' }} className="hero-grid">
-
-            <div>
-              <div className="accent-bar" style={{ marginBottom: 20 }}>Independent Owner&apos;s Engineer — Offshore Wind</div>
-
-              <h1 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: 'clamp(2.4rem, 5vw, 3.8rem)', fontWeight: 800, lineHeight: 1.0, letterSpacing: '0.01em', textTransform: 'uppercase', marginBottom: 20 }}>
-                Nobody owns your<br/>
-                <span style={{ color: '#00C8C8' }}>SCADA integration</span><br/>
-                layer. We do.
-              </h1>
-
-              <p style={{ fontSize: 16, color: '#7A9BB5', lineHeight: 1.75, maxWidth: 460, marginBottom: 32, fontWeight: 300 }}>
-                From day one of design to final commissioning handover. 
-                No vendor to protect. No platform to sell. 
-                Just independent technical oversight of your SCADA scope.
-              </p>
-
-              <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-                <Link href="/contact" className="btn-primary">Request a consultation</Link>
-                <Link href="/projects" className="btn-outline">View projects</Link>
-              </div>
-
-              {/* Certifications strip */}
-              <div style={{ marginTop: 40, display: 'flex', gap: 8, flexWrap: 'wrap' }}>
-                {['IEC 61850', 'IEC 62443', 'IEC 61400-25', 'HVDC', 'NIS2'].map(tag => (
-                  <span key={tag} style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 10, padding: '3px 10px', border: '1px solid rgba(0,160,160,0.2)', borderRadius: 2, color: '#4A6880', letterSpacing: '0.08em' }}>
-                    {tag}
-                  </span>
-                ))}
-              </div>
+      <section className="hero-section">
+        <div className="hero-inner">
+          <div className="hero-left">
+            <div className="accent-bar">Independent Owner&apos;s Engineer — Offshore Wind</div>
+            <h1 className="hero-title">
+              Nobody owns your<br/>
+              <span className="hero-accent">SCADA integration</span><br/>
+              layer. We do.
+            </h1>
+            <p className="hero-sub">
+              From day one of design to final commissioning handover.
+              No vendor to protect. No platform to sell.
+              Just independent technical oversight of your SCADA scope.
+            </p>
+            <div className="hero-btns">
+              <Link href="/contact" className="btn-primary">Request a consultation</Link>
+              <Link href="/projects" className="btn-outline">View projects</Link>
             </div>
+            <div className="hero-tags">
+              {['IEC 61850', 'IEC 62443', 'IEC 61400-25', 'HVDC', 'NIS2'].map(tag => (
+                <span key={tag} className="tech-tag">{tag}</span>
+              ))}
+            </div>
+          </div>
 
-            {/* Right panel */}
-            <div style={{ background: 'rgba(0,30,48,0.7)', border: '1px solid rgba(0,160,160,0.2)', borderRadius: 12, padding: 32 }}>
-              {/* Current project badge */}
-              <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 24, padding: '8px 14px', background: 'rgba(0,160,160,0.08)', border: '1px solid rgba(0,160,160,0.2)', borderRadius: 4 }}>
-                <div style={{ width: 7, height: 7, borderRadius: '50%', background: '#00C8C8', boxShadow: '0 0 8px #00C8C8', flexShrink: 0, animation: 'pulse 2s infinite' }} />
-                <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 10, color: '#00C8C8', letterSpacing: '0.1em', textTransform: 'uppercase' }}>Currently active — Hornsea 3 HVDC</span>
+          <div className="hero-right">
+            <div className="hero-card">
+              <div className="active-badge">
+                <div className="pulse-dot" />
+                <span>Currently active — Hornsea 3 HVDC</span>
               </div>
-
-              {/* Stats */}
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 24 }}>
-                {stats.map(s => (
-                  <div key={s.n} style={{ background: 'rgba(0,18,32,0.6)', border: '1px solid rgba(0,160,160,0.12)', borderRadius: 8, padding: '16px 14px' }}>
-                    <div style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: '1.8rem', fontWeight: 800, color: '#00C8C8', lineHeight: 1 }}>{s.n}</div>
-                    <div style={{ fontSize: 11, color: '#4A6880', marginTop: 4, fontFamily: "'IBM Plex Mono', monospace", letterSpacing: '0.04em' }}>{s.l}</div>
+              <div className="stats-grid">
+                {[['15+', 'Years offshore wind'], ['10+', 'Major projects'], ['10+ GW', 'Capacity delivered'], ['6', 'Developer clients']].map(([n, l]) => (
+                  <div key={l} className="stat-box">
+                    <div className="stat-num">{n}</div>
+                    <div className="stat-label">{l}</div>
                   </div>
                 ))}
               </div>
-
-              {/* Projects preview */}
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+              <div className="projects-preview">
                 {[
-                  { c: 'Ørsted', p: 'Hornsea 3 HVDC', s: 'Active' },
-                  { c: 'Vattenfall / RWE', p: 'Norfolk Boreas & Vanguard', s: 'Completed' },
-                  { c: 'ENGIE Fabricom', p: 'Veja Mate · Merkur · Baltic Eagle', s: 'Completed' },
+                  { c: 'Ørsted', p: 'Hornsea 3 HVDC', s: true },
+                  { c: 'Vattenfall / RWE', p: 'Norfolk Boreas & Vanguard', s: false },
+                  { c: 'ENGIE Fabricom', p: 'Veja Mate · Merkur · Baltic Eagle', s: false },
                 ].map(r => (
-                  <div key={r.p} style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '8px 0', borderBottom: '1px solid rgba(0,160,160,0.06)' }}>
-                    <div style={{ width: 6, height: 6, borderRadius: '50%', background: r.s === 'Active' ? '#00C8C8' : '#4A6880', flexShrink: 0 }} />
-                    <div style={{ flex: 1, minWidth: 0 }}>
-                      <div style={{ fontSize: 12, fontWeight: 500, color: 'white', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{r.p}</div>
-                      <div style={{ fontSize: 11, color: '#4A6880', fontFamily: "'IBM Plex Mono', monospace" }}>{r.c}</div>
+                  <div key={r.p} className="project-row">
+                    <div className={`project-dot ${r.s ? 'project-dot-active' : ''}`} />
+                    <div className="project-info">
+                      <div className="project-name">{r.p}</div>
+                      <div className="project-client">{r.c}</div>
                     </div>
-                    <span style={{ fontSize: 10, color: r.s === 'Active' ? '#00C8C8' : '#4A6880', fontFamily: "'IBM Plex Mono', monospace', flexShrink: 0" }}>{r.s}</span>
+                    <span className={`project-status ${r.s ? 'project-status-active' : ''}`}>{r.s ? 'Active' : 'Done'}</span>
                   </div>
                 ))}
-                <Link href="/projects" style={{ fontSize: 12, color: '#00A0A0', textDecoration: 'none', marginTop: 8, fontFamily: "'IBM Plex Mono', monospace" }}>
-                  View all projects →
-                </Link>
+                <Link href="/projects" className="view-all-link">View all projects →</Link>
               </div>
             </div>
           </div>
@@ -106,45 +81,30 @@ export default function HomePage() {
 
       <div className="section-divider" />
 
-      {/* ── CHALLENGE / SOLUTION ── */}
-      <section style={{ padding: '80px 24px' }}>
-        <div style={{ maxWidth: 1120, margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', marginBottom: 56 }}>
-            <div className="accent-bar" style={{ marginBottom: 12 }}>The problem we solve</div>
-            <h2 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: 'clamp(1.8rem, 4vw, 2.8rem)', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.02em' }}>
-              Offshore SCADA gaps are <span style={{ color: '#00C8C8' }}>invisible</span><br/>until delivery is at risk
+      <section className="challenge-section">
+        <div className="section-inner">
+          <div className="section-header">
+            <div className="accent-bar">The problem we solve</div>
+            <h2 className="section-title">
+              Offshore SCADA gaps are <span className="text-teal">invisible</span><br/>until delivery is at risk
             </h2>
           </div>
-
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }} className="two-col">
-            <div style={{ background: 'rgba(0,30,48,0.6)', border: '1px solid rgba(192,57,43,0.2)', borderRadius: 12, padding: 32 }}>
-              <div style={{ fontSize: 10, fontFamily: "'IBM Plex Mono', monospace", letterSpacing: '0.14em', textTransform: 'uppercase', color: '#E07B00', marginBottom: 16 }}>The challenge</div>
-              {[
-                'No single owner of the integration layer',
-                'Interface failures discovered too late',
-                'Vendor interests misaligned with yours',
-                'Commissioning pressure creates reactive decisions',
-                'Signal list conflicts found during SAT, not FEED',
-              ].map(i => (
-                <div key={i} style={{ display: 'flex', gap: 10, marginBottom: 12 }}>
-                  <span style={{ color: '#C0392B', flexShrink: 0, marginTop: 2 }}>✕</span>
-                  <span style={{ fontSize: 14, color: '#7A9BB5', lineHeight: 1.5 }}>{i}</span>
+          <div className="two-col">
+            <div className="challenge-card">
+              <div className="card-label" style={{ color: '#E07B00' }}>The challenge</div>
+              {['No single owner of the integration layer', 'Interface failures discovered too late', 'Vendor interests misaligned with yours', 'Commissioning pressure creates reactive decisions', 'Signal conflicts found during SAT, not FEED'].map(i => (
+                <div key={i} className="check-row">
+                  <span className="check-x">✕</span>
+                  <span className="check-text">{i}</span>
                 </div>
               ))}
             </div>
-
-            <div style={{ background: 'rgba(0,30,48,0.6)', border: '1px solid rgba(0,160,160,0.2)', borderRadius: 12, padding: 32 }}>
-              <div style={{ fontSize: 10, fontFamily: "'IBM Plex Mono', monospace", letterSpacing: '0.14em', textTransform: 'uppercase', color: '#00C8C8', marginBottom: 16 }}>Our solution</div>
-              {[
-                'One independent voice owning the integration layer',
-                'Interface management from FEED through commissioning',
-                'No vendor, no platform — your interests only',
-                'IEC 61850, IEC 62443, and IEC 61400-25 expertise',
-                'Vendor-neutral signal register and conflict detection',
-              ].map(i => (
-                <div key={i} style={{ display: 'flex', gap: 10, marginBottom: 12 }}>
-                  <span style={{ color: '#00843D', flexShrink: 0, marginTop: 2 }}>✓</span>
-                  <span style={{ fontSize: 14, color: '#7A9BB5', lineHeight: 1.5 }}>{i}</span>
+            <div className="solution-card">
+              <div className="card-label" style={{ color: '#00C8C8' }}>Our solution</div>
+              {['One independent voice owning the integration layer', 'Interface management from FEED through commissioning', 'No vendor, no platform — your interests only', 'IEC 61850, IEC 62443, and IEC 61400-25 expertise', 'Vendor-neutral signal register and conflict detection'].map(i => (
+                <div key={i} className="check-row">
+                  <span className="check-ok">✓</span>
+                  <span className="check-text">{i}</span>
                 </div>
               ))}
             </div>
@@ -154,27 +114,19 @@ export default function HomePage() {
 
       <div className="section-divider" />
 
-      {/* ── SERVICES ── */}
-      <section style={{ padding: '80px 24px' }}>
-        <div style={{ maxWidth: 1120, margin: '0 auto' }}>
-          <div style={{ marginBottom: 48 }}>
-            <div className="accent-bar" style={{ marginBottom: 12 }}>What we do</div>
-            <h2 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: 'clamp(1.8rem, 4vw, 2.6rem)', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.02em', maxWidth: 480 }}>
-              Where Scada Fortis <span style={{ color: '#00C8C8' }}>creates value</span>
-            </h2>
+      <section className="services-section">
+        <div className="section-inner">
+          <div className="section-header-left">
+            <div className="accent-bar">What we do</div>
+            <h2 className="section-title-left">Where Scada Fortis <span className="text-teal">creates value</span></h2>
           </div>
-
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16 }} className="services-grid">
+          <div className="services-grid">
             {services.map((s, i) => (
-              <div key={s.title} className="card" style={{ padding: 24 }}>
-                <div style={{ width: 32, height: 32, background: 'rgba(0,160,160,0.1)', border: '1px solid rgba(0,160,160,0.2)', borderRadius: 6, marginBottom: 16, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <span style={{ color: '#00A0A0', fontSize: 14, fontFamily: "'IBM Plex Mono', monospace", fontWeight: 600 }}>{String(i+1).padStart(2,'0')}</span>
-                </div>
-                <h3 style={{ fontSize: 16, fontWeight: 600, color: 'white', marginBottom: 10 }}>{s.title}</h3>
-                <p style={{ fontSize: 13, color: '#7A9BB5', lineHeight: 1.65 }}>{s.desc}</p>
-                <Link href="/services" style={{ display: 'inline-block', marginTop: 16, fontSize: 12, color: '#00A0A0', textDecoration: 'none', fontFamily: "'IBM Plex Mono', monospace" }}>
-                  Learn more →
-                </Link>
+              <div key={s.title} className="service-card card">
+                <div className="service-num">{String(i+1).padStart(2,'0')}</div>
+                <h3 className="service-title">{s.title}</h3>
+                <p className="service-desc">{s.desc}</p>
+                <Link href="/services" className="service-link">Learn more →</Link>
               </div>
             ))}
           </div>
@@ -183,37 +135,36 @@ export default function HomePage() {
 
       <div className="section-divider" />
 
-      {/* ── FORTIS CONNECT TOOL ── */}
-      <section style={{ padding: '80px 24px', background: 'rgba(0,18,32,0.5)' }}>
-        <div style={{ maxWidth: 1120, margin: '0 auto' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 48, alignItems: 'center' }} className="two-col">
+      <section className="tool-section">
+        <div className="section-inner">
+          <div className="two-col">
             <div>
-              <div className="accent-bar" style={{ marginBottom: 12 }}>Free tool</div>
-              <h2 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: 'clamp(1.6rem, 3.5vw, 2.4rem)', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.02em', marginBottom: 16 }}>
-                FORTIS CONNECT<br/><span style={{ color: '#00C8C8' }}>Signal Mapper</span>
+              <div className="accent-bar">Free tool</div>
+              <h2 className="section-title-left" style={{ marginTop: 12 }}>
+                FORTIS CONNECT<br/><span className="text-teal">Signal Mapper</span>
               </h2>
-              <p style={{ fontSize: 14, color: '#7A9BB5', lineHeight: 1.7, marginBottom: 24 }}>
-                Free browser tool to detect signal conflicts between two SCADA interfaces — 
-                missing signals, type mismatches, direction conflicts, and IEC 61850 logical node violations. 
+              <p className="tool-desc">
+                Free browser tool to detect signal conflicts between two SCADA interfaces —
+                missing signals, type mismatches, direction conflicts, and IEC 61850 logical node violations.
                 No upload, no login, runs entirely in your browser.
               </p>
               <a href="https://abdelscadafortis.github.io/signal-mapper/" target="_blank" rel="noreferrer" className="btn-primary">
                 Try the free tool →
               </a>
             </div>
-            <div style={{ background: 'rgba(0,30,48,0.7)', border: '1px solid rgba(0,160,160,0.2)', borderRadius: 12, padding: 28 }}>
+            <div className="tool-features">
               {[
-                ['Missing signal detection', 'Signals present in one interface but absent in the other'],
+                ['Missing signal detection', 'Signals present on one side but absent on the other'],
                 ['Type mismatch detection', 'Boolean declared Analog — or vice versa'],
                 ['Direction conflict detection', 'Both sides declaring OUT with no consumer'],
-                ['IEC 61850 LN validation', 'DA compatibility check against 61850-7-4 standard'],
+                ['IEC 61850 LN validation', 'DA compatibility check against 61850-7-4'],
                 ['Per-WTG aggregation', 'Interface readiness score per turbine'],
               ].map(([t, d]) => (
-                <div key={t} style={{ display: 'flex', gap: 12, marginBottom: 16, paddingBottom: 16, borderBottom: '1px solid rgba(0,160,160,0.06)' }}>
-                  <span style={{ color: '#00C8C8', flexShrink: 0, fontSize: 14, marginTop: 1 }}>⬡</span>
+                <div key={t} className="tool-feature-row">
+                  <span className="tool-hex">⬡</span>
                   <div>
-                    <div style={{ fontSize: 13, fontWeight: 500, color: 'white', marginBottom: 3 }}>{t}</div>
-                    <div style={{ fontSize: 12, color: '#4A6880' }}>{d}</div>
+                    <div className="tool-feat-title">{t}</div>
+                    <div className="tool-feat-desc">{d}</div>
                   </div>
                 </div>
               ))}
@@ -224,18 +175,17 @@ export default function HomePage() {
 
       <div className="section-divider" />
 
-      {/* ── CTA ── */}
-      <section style={{ padding: '80px 24px' }}>
-        <div style={{ maxWidth: 700, margin: '0 auto', textAlign: 'center' }}>
-          <div className="accent-bar" style={{ marginBottom: 16, display: 'inline-block' }}>Start the conversation</div>
-          <h2 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: 'clamp(1.8rem, 4vw, 3rem)', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.02em', marginBottom: 16 }}>
-            Bring independent SCADA oversight<br/>into your <span style={{ color: '#00C8C8' }}>offshore wind project</span>
+      <section className="cta-section">
+        <div className="cta-inner">
+          <div className="accent-bar" style={{ display: 'inline-block', marginBottom: 16 }}>Start the conversation</div>
+          <h2 className="cta-title">
+            Bring independent SCADA oversight<br/>into your <span className="text-teal">offshore wind project</span>
           </h2>
-          <p style={{ fontSize: 15, color: '#7A9BB5', lineHeight: 1.7, marginBottom: 32 }}>
-            SCADA and telecom problems found in FEED cost a fraction of what they cost during commissioning. 
+          <p className="cta-sub">
+            SCADA and telecom problems found in FEED cost a fraction of what they cost during commissioning.
             Bring us in early — before the interfaces are locked and the pressure is on.
           </p>
-          <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
+          <div className="cta-btns">
             <Link href="/contact" className="btn-primary">Request a consultation</Link>
             <Link href="/projects" className="btn-outline">View our projects</Link>
           </div>
@@ -243,13 +193,73 @@ export default function HomePage() {
       </section>
 
       <style>{`
-        @media (max-width: 768px) {
-          .hero-grid, .two-col, .services-grid { grid-template-columns: 1fr !important; }
-        }
-        @media (max-width: 1024px) {
-          .services-grid { grid-template-columns: 1fr 1fr !important; }
-        }
+        .hero-section { min-height: 88vh; display: flex; align-items: center; padding: 80px 24px 60px; }
+        .hero-inner { max-width: 1120px; margin: 0 auto; width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+        .hero-left { display: flex; flex-direction: column; gap: 0; }
+        .hero-title { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(2.4rem, 5vw, 3.8rem); font-weight: 800; line-height: 1.0; letter-spacing: 0.01em; text-transform: uppercase; margin: 16px 0 20px; }
+        .hero-accent { color: #00C8C8; }
+        .hero-sub { font-size: 16px; color: #7A9BB5; line-height: 1.75; max-width: 460px; margin-bottom: 32px; font-weight: 300; }
+        .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 32px; }
+        .hero-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+        .tech-tag { font-family: 'IBM Plex Mono', monospace; font-size: 10px; padding: 3px 10px; border: 1px solid rgba(0,160,160,0.2); border-radius: 2px; color: #4A6880; letter-spacing: 0.08em; }
+        .hero-right { }
+        .hero-card { background: rgba(0,30,48,0.7); border: 1px solid rgba(0,160,160,0.2); border-radius: 12px; padding: 28px; }
+        .active-badge { display: flex; align-items: center; gap: 8px; margin-bottom: 24px; padding: 8px 14px; background: rgba(0,160,160,0.08); border: 1px solid rgba(0,160,160,0.2); border-radius: 4px; }
+        .pulse-dot { width: 7px; height: 7px; border-radius: 50%; background: #00C8C8; box-shadow: 0 0 8px #00C8C8; flex-shrink: 0; animation: pulse 2s infinite; }
+        .active-badge span { font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #00C8C8; letter-spacing: 0.1em; text-transform: uppercase; }
+        .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 20px; }
+        .stat-box { background: rgba(0,18,32,0.6); border: 1px solid rgba(0,160,160,0.12); border-radius: 8px; padding: 14px; }
+        .stat-num { font-family: 'Barlow Condensed', sans-serif; font-size: 1.8rem; font-weight: 800; color: #00C8C8; line-height: 1; }
+        .stat-label { font-size: 11px; color: #4A6880; margin-top: 4px; font-family: 'IBM Plex Mono', monospace; }
+        .projects-preview { display: flex; flex-direction: column; }
+        .project-row { display: flex; align-items: center; gap: 10px; padding: 8px 0; border-bottom: 1px solid rgba(0,160,160,0.06); }
+        .project-dot { width: 6px; height: 6px; border-radius: 50%; background: #4A6880; flex-shrink: 0; }
+        .project-dot-active { background: #00C8C8; }
+        .project-info { flex: 1; min-width: 0; }
+        .project-name { font-size: 12px; font-weight: 500; color: white; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .project-client { font-size: 11px; color: #4A6880; font-family: 'IBM Plex Mono', monospace; }
+        .project-status { font-size: 10px; color: #4A6880; font-family: 'IBM Plex Mono', monospace; flex-shrink: 0; }
+        .project-status-active { color: #00C8C8; }
+        .view-all-link { font-size: 12px; color: #00A0A0; text-decoration: none; margin-top: 10px; font-family: 'IBM Plex Mono', monospace; }
+        .view-all-link:hover { color: #00C8C8; }
+        .challenge-section, .services-section, .tool-section, .cta-section { padding: 80px 24px; }
+        .tool-section { background: rgba(0,18,32,0.5); }
+        .section-inner { max-width: 1120px; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: 48px; }
+        .section-header-left { margin-bottom: 48px; }
+        .section-title { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; text-transform: uppercase; letter-spacing: 0.02em; margin-top: 12px; }
+        .section-title-left { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; text-transform: uppercase; letter-spacing: 0.02em; max-width: 480px; margin-top: 12px; }
+        .text-teal { color: #00C8C8; }
+        .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+        .challenge-card { background: rgba(0,30,48,0.6); border: 1px solid rgba(192,57,43,0.2); border-radius: 12px; padding: 32px; }
+        .solution-card { background: rgba(0,30,48,0.6); border: 1px solid rgba(0,160,160,0.2); border-radius: 12px; padding: 32px; }
+        .card-label { font-size: 10px; font-family: 'IBM Plex Mono', monospace; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 20px; }
+        .check-row { display: flex; gap: 10px; margin-bottom: 12px; }
+        .check-x { color: #C0392B; flex-shrink: 0; margin-top: 2px; }
+        .check-ok { color: #00843D; flex-shrink: 0; margin-top: 2px; }
+        .check-text { font-size: 14px; color: #7A9BB5; line-height: 1.5; }
+        .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+        .service-card { padding: 24px; }
+        .service-num { font-family: 'IBM Plex Mono', monospace; font-size: 10px; font-weight: 600; color: #00A0A0; background: rgba(0,160,160,0.1); border: 1px solid rgba(0,160,160,0.2); border-radius: 4px; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; margin-bottom: 14px; }
+        .service-title { font-size: 16px; font-weight: 600; color: white; margin-bottom: 10px; }
+        .service-desc { font-size: 13px; color: #7A9BB5; line-height: 1.65; margin-bottom: 16px; }
+        .service-link { font-size: 12px; color: #00A0A0; text-decoration: none; font-family: 'IBM Plex Mono', monospace; }
+        .service-link:hover { color: #00C8C8; }
+        .tool-desc { font-size: 14px; color: #7A9BB5; line-height: 1.7; margin: 16px 0 24px; }
+        .tool-features { display: flex; flex-direction: column; gap: 0; background: rgba(0,30,48,0.7); border: 1px solid rgba(0,160,160,0.2); border-radius: 12px; padding: 24px; }
+        .tool-feature-row { display: flex; gap: 12px; padding-bottom: 14px; margin-bottom: 14px; border-bottom: 1px solid rgba(0,160,160,0.06); }
+        .tool-feature-row:last-child { border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
+        .tool-hex { color: #00C8C8; font-size: 14px; flex-shrink: 0; margin-top: 1px; }
+        .tool-feat-title { font-size: 13px; font-weight: 500; color: white; margin-bottom: 3px; }
+        .tool-feat-desc { font-size: 12px; color: #4A6880; }
+        .cta-section { padding: 80px 24px; }
+        .cta-inner { max-width: 700px; margin: 0 auto; text-align: center; }
+        .cta-title { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 800; text-transform: uppercase; letter-spacing: 0.02em; margin-bottom: 16px; margin-top: 0; }
+        .cta-sub { font-size: 15px; color: #7A9BB5; line-height: 1.7; margin-bottom: 32px; }
+        .cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
         @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+        @media (max-width: 1024px) { .services-grid { grid-template-columns: 1fr 1fr !important; } }
+        @media (max-width: 768px) { .hero-inner, .two-col { grid-template-columns: 1fr !important; } .services-grid { grid-template-columns: 1fr !important; } }
       `}</style>
     </main>
   )
