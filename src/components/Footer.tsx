@@ -4,7 +4,7 @@ import Link from 'next/link'
 export default function Footer() {
   return (
     <footer style={{ background: '#001220', borderTop: '1px solid rgba(0,160,160,0.15)', marginTop: 80 }}>
-      <div style={{ maxWidth: 1120, margin: '0 auto', padding: '48px 24px 32px', display: 'grid', gridTemplateColumns: '1.4fr 1fr 1fr 1fr', gap: 40 }} className="footer-grid">
+      <div style={{ maxWidth: 1120, margin: '0 auto', padding: '48px 24px 32px', display: 'grid', gap: 40 }} className="footer-grid">
         
         <div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 16 }}>
@@ -23,57 +23,47 @@ export default function Footer() {
           <p style={{ fontSize: 12, color: '#4A6880', marginTop: 12, fontFamily: "'IBM Plex Mono', monospace" }}>
             The offshore wind SCADA department<br/>you don&apos;t have to build.
           </p>
-          <div style={{ marginTop: 20, display: 'flex', gap: 10 }}>
+          <div style={{ marginTop: 20 }}>
             <a href="https://www.linkedin.com/in/abdelmounaim-errouchi-b4485a20/" target="_blank" rel="noreferrer"
-              style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 12, color: '#00A0A0', textDecoration: 'none', padding: '6px 12px', border: '1px solid rgba(0,160,160,0.25)', borderRadius: 4 }}>
+              style={{ display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 12, color: '#00A0A0', textDecoration: 'none', padding: '6px 12px', border: '1px solid rgba(0,160,160,0.25)', borderRadius: 4 }}>
               LinkedIn
             </a>
           </div>
         </div>
 
-        <div>
-          <h4 style={{ fontSize: 10, fontFamily: "'IBM Plex Mono', monospace", letterSpacing: '0.14em', textTransform: 'uppercase', color: '#00C8C8', marginBottom: 16 }}>Navigation</h4>
-          <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 10 }}>
-            {[['/', 'Home'], ['/about', 'About'], ['/services', 'Services'], ['/expertise', 'Expertise'], ['/projects', 'Projects'], ['/resources', 'Resources'], ['/contact', 'Contact']].map(([href, label]) => (
-              <li key={href}><Link href={href} style={{ fontSize: 13, color: '#4A6880', textDecoration: 'none', transition: 'color 0.15s' }}
-                onMouseEnter={e => (e.target as HTMLElement).style.color = '#00C8C8'}
-                onMouseLeave={e => (e.target as HTMLElement).style.color = '#4A6880'}
-              >{label}</Link></li>
-            ))}
-          </ul>
-        </div>
-
-        <div>
-          <h4 style={{ fontSize: 10, fontFamily: "'IBM Plex Mono', monospace", letterSpacing: '0.14em', textTransform: 'uppercase', color: '#00C8C8', marginBottom: 16 }}>Services</h4>
-          <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 10 }}>
-            {["Owner's Engineer", "SCADA Engineering", "Commissioning", "Interface Management", "OT Cybersecurity"].map(s => (
-              <li key={s}><Link href="/services" style={{ fontSize: 13, color: '#4A6880', textDecoration: 'none' }}
-                onMouseEnter={e => (e.target as HTMLElement).style.color = '#00C8C8'}
-                onMouseLeave={e => (e.target as HTMLElement).style.color = '#4A6880'}
-              >{s}</Link></li>
-            ))}
-          </ul>
-        </div>
-
-        <div>
-          <h4 style={{ fontSize: 10, fontFamily: "'IBM Plex Mono', monospace", letterSpacing: '0.14em', textTransform: 'uppercase', color: '#00C8C8', marginBottom: 16 }}>Contact</h4>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
-            <a href="mailto:abdel@scadafortis.com" style={{ fontSize: 13, color: '#4A6880', textDecoration: 'none' }}
-              onMouseEnter={e => (e.target as HTMLElement).style.color = '#00C8C8'}
-              onMouseLeave={e => (e.target as HTMLElement).style.color = '#4A6880'}
-            >abdel@scadafortis.com</a>
-            <a href="tel:+352661323271" style={{ fontSize: 13, color: '#4A6880', textDecoration: 'none' }}>+352 661 32 32 71</a>
-            <p style={{ fontSize: 13, color: '#4A6880', margin: 0 }}>Luxembourg</p>
-            <div style={{ marginTop: 4 }}>
-              <h4 style={{ fontSize: 10, fontFamily: "'IBM Plex Mono', monospace", letterSpacing: '0.14em', textTransform: 'uppercase', color: '#00C8C8', marginBottom: 10 }}>Legal</h4>
-              {[['Privacy Policy', '/legal'], ['Terms of Service', '/legal'], ['Cookie Policy', '/legal']].map(([label, href]) => (
-                <div key={label} style={{ marginBottom: 8 }}>
-                  <Link href={href} style={{ fontSize: 12, color: '#4A6880', textDecoration: 'none' }}
-                    onMouseEnter={e => (e.target as HTMLElement).style.color = '#00C8C8'}
-                    onMouseLeave={e => (e.target as HTMLElement).style.color = '#4A6880'}
-                  >{label}</Link>
-                </div>
+        <div className="footer-links">
+          <div>
+            <h4 style={{ fontSize: 10, fontFamily: "'IBM Plex Mono', monospace", letterSpacing: '0.14em', textTransform: 'uppercase', color: '#00C8C8', marginBottom: 16 }}>Navigation</h4>
+            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 10 }}>
+              {[['/', 'Home'], ['/about', 'About'], ['/services', 'Services'], ['/expertise', 'Expertise'], ['/projects', 'Projects'], ['/resources', 'Resources'], ['/contact', 'Contact']].map(([href, label]) => (
+                <li key={href}><Link href={href} style={{ fontSize: 13, color: '#4A6880', textDecoration: 'none' }} className="footer-link">{label}</Link></li>
               ))}
+            </ul>
+          </div>
+
+          <div>
+            <h4 style={{ fontSize: 10, fontFamily: "'IBM Plex Mono', monospace", letterSpacing: '0.14em', textTransform: 'uppercase', color: '#00C8C8', marginBottom: 16 }}>Services</h4>
+            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 10 }}>
+              {["Owner's Engineer", "SCADA Engineering", "Commissioning", "Interface Management", "OT Cybersecurity"].map(s => (
+                <li key={s}><Link href="/services" style={{ fontSize: 13, color: '#4A6880', textDecoration: 'none' }} className="footer-link">{s}</Link></li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h4 style={{ fontSize: 10, fontFamily: "'IBM Plex Mono', monospace", letterSpacing: '0.14em', textTransform: 'uppercase', color: '#00C8C8', marginBottom: 16 }}>Contact</h4>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+              <a href="mailto:abdel@scadafortis.com" style={{ fontSize: 13, color: '#4A6880', textDecoration: 'none' }} className="footer-link">abdel@scadafortis.com</a>
+              <a href="tel:+352661323271" style={{ fontSize: 13, color: '#4A6880', textDecoration: 'none' }} className="footer-link">+352 661 32 32 71</a>
+              <p style={{ fontSize: 13, color: '#4A6880', margin: 0 }}>Luxembourg</p>
+              <div style={{ marginTop: 8 }}>
+                <h4 style={{ fontSize: 10, fontFamily: "'IBM Plex Mono', monospace", letterSpacing: '0.14em', textTransform: 'uppercase', color: '#00C8C8', marginBottom: 10 }}>Legal</h4>
+                {[['Privacy Policy', '/legal'], ['Terms of Service', '/legal'], ['Cookie Policy', '/legal']].map(([label, href]) => (
+                  <div key={label} style={{ marginBottom: 8 }}>
+                    <Link href={href} style={{ fontSize: 12, color: '#4A6880', textDecoration: 'none' }} className="footer-link">{label}</Link>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -89,11 +79,15 @@ export default function Footer() {
       </div>
 
       <style>{`
+        .footer-grid { grid-template-columns: 1.4fr 2fr; }
+        .footer-links { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 32px; }
+        .footer-link:hover { color: #00C8C8 !important; }
         @media (max-width: 768px) {
-          .footer-grid { grid-template-columns: 1fr 1fr !important; }
+          .footer-grid { grid-template-columns: 1fr !important; }
+          .footer-links { grid-template-columns: 1fr 1fr !important; }
         }
         @media (max-width: 480px) {
-          .footer-grid { grid-template-columns: 1fr !important; }
+          .footer-links { grid-template-columns: 1fr !important; }
         }
       `}</style>
     </footer>
