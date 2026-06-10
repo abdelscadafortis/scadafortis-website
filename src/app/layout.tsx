@@ -27,7 +27,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <head>
-        <Script src="https://app.secureprivacy.ai/script/6a29046ed14c7b29ea3a380c.js" strategy="beforeInteractive" />
+
         <Script src="https://www.googletagmanager.com/gtag/js?id=G-8B8P7KNWLX" strategy="afterInteractive" />
         <Script id="ga" strategy="afterInteractive">{`
           window.dataLayer=window.dataLayer||[];
