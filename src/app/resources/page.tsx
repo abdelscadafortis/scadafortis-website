@@ -10,7 +10,7 @@ const resources = [
   { cat: 'Insight', title: 'Why interface management matters', desc: 'How unclear interfaces between suppliers can create delays during commissioning.', type: 'Article', href: null },
   { cat: 'Cybersecurity', title: 'IEC 62443 and offshore control systems', desc: 'Key cybersecurity considerations for OT systems in offshore wind environments.', type: 'Guide', href: null },
   { cat: 'Commissioning', title: 'FAT, SAT and SIT explained', desc: 'A simple breakdown of the main testing stages used before handover.', type: 'Explainer', href: null },
-  { cat: 'Download', title: 'Company profile', desc: 'A downloadable company profile presenting Scada Fortis, its services, and expertise.', type: 'PDF', href: '/contact' },
+  { cat: 'Download', title: 'Company profile', desc: 'A downloadable company profile presenting Scada Fortis, its services, and expertise.', type: 'PDF', href: '/ScadaFortis_OnePager_2026.pdf', live: true },
 ]
 export default function ResourcesPage() {
   return (
