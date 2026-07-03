@@ -37,4 +37,45 @@ export default function CaseStudiesPage() {
             Real projects, <span style={{ color: '#00C8C8' }}>real interfaces, real outcomes</span>
           </h1>
           <p style={{ marginTop: 16, fontSize: 15, color: '#7A9BB5', maxWidth: 560, lineHeight: 1.7 }}>
-            Two engagements showing what
+            Two engagements showing what Owner's Engineer ownership of the SCADA and telecom scope looks like in practice.
+          </p>
+        </div>
+
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 32 }}>
+          {cases.map(c => (
+            <div key={c.title} className="card" style={{ padding: 40 }}>
+              <div style={{ fontSize: 11, fontFamily: "'IBM Plex Mono', monospace", letterSpacing: '0.1em', textTransform: 'uppercase', color: '#00A0A0', marginBottom: 10 }}>{c.tag}</div>
+              <h2 style={{ fontSize: 22, fontWeight: 700, color: 'white', marginBottom: 6, lineHeight: 1.3 }}>{c.title}</h2>
+              <div style={{ fontSize: 12, color: '#4A6880', fontFamily: "'IBM Plex Mono', monospace", marginBottom: 24 }}>{c.client}</div>
+
+              <div style={{ display: 'grid', gap: 20 }}>
+                <div>
+                  <div style={{ fontSize: 10, fontFamily: "'IBM Plex Mono', monospace", letterSpacing: '0.12em', textTransform: 'uppercase', color: '#7A9BB5', marginBottom: 8 }}>Challenge</div>
+                  <p style={{ fontSize: 14, color: '#7A9BB5', lineHeight: 1.75, margin: 0 }}>{c.challenge}</p>
+                </div>
+                <div>
+                  <div style={{ fontSize: 10, fontFamily: "'IBM Plex Mono', monospace", letterSpacing: '0.12em', textTransform: 'uppercase', color: '#7A9BB5', marginBottom: 8 }}>Approach</div>
+                  <p style={{ fontSize: 14, color: '#7A9BB5', lineHeight: 1.75, margin: 0 }}>{c.approach}</p>
+                </div>
+                <div>
+                  <div style={{ fontSize: 10, fontFamily: "'IBM Plex Mono', monospace", letterSpacing: '0.12em', textTransform: 'uppercase', color: '#00C8C8', marginBottom: 8 }}>Result</div>
+                  <p style={{ fontSize: 14, color: 'white', lineHeight: 1.75, margin: 0 }}>{c.result}</p>
+                </div>
+              </div>
+
+              <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', paddingTop: 20, marginTop: 20, borderTop: '1px solid rgba(0,160,160,0.08)' }}>
+                {c.tech.map(t => (
+                  <span key={t} style={{ fontSize: 10, fontFamily: "'IBM Plex Mono', monospace", padding: '2px 8px', border: '1px solid rgba(0,160,160,0.15)', borderRadius: 2, color: '#4A6880', letterSpacing: '0.04em' }}>{t}</span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div style={{ textAlign: 'center', marginTop: 56 }}>
+          <Link href="/contact" className="btn-primary">Discuss your project →</Link>
+        </div>
+      </div>
+    </main>
+  )
+}
