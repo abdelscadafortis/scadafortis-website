@@ -24,7 +24,7 @@ export default function Footer() {
           <div>
             <h4 className="footer-col-title">Navigation</h4>
             <ul className="footer-list">
-              {[['/', 'Home'], ['/about', 'About'], ['/services', 'Services'], ['/expertise', 'Expertise'], ['/projects', 'Projects'], ['/resources', 'Resources'], ['/contact', 'Contact']].map(([href, label]) => (
+              {[['/', 'Home'], ['/about', 'About'], ['/services', 'Services'], ['/expertise', 'Expertise'], ['/projects', 'Projects'], ['/case-studies', 'Case Studies'], ['/resources', 'Resources'], ['/availability', 'Availability'], ['/contact', 'Contact']].map(([href, label]) => (
                 <li key={href}><Link href={href} className="footer-link">{label}</Link></li>
               ))}
             </ul>
