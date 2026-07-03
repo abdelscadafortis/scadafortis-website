@@ -5,6 +5,7 @@ import Footer from '@/components/Footer'
 import Script from 'next/script'
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://scadafortis.com'),
   title: {
     default: "Scada Fortis — Independent Owner's Engineer for Offshore Wind",
     template: "%s — Scada Fortis",
