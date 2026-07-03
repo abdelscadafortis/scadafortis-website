@@ -45,7 +45,12 @@ export default function ServicesPage() {
             <h2 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: '1.6rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.02em', marginBottom: 8 }}>No vendor to protect. <span style={{ color: '#00C8C8' }}>No platform to sell.</span></h2>
             <p style={{ fontSize: 14, color: '#7A9BB5', maxWidth: 480, lineHeight: 1.6 }}>Scada Fortis acts as an independent engineering partner for project owners. The objective is to keep control of the SCADA integration layer from the beginning of the project.</p>
           </div>
-          <Link href="/contact" className="btn-primary" style={{ flexShrink: 0 }}>Request a consultation</Link>
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 8, flexShrink: 0 }}>
+            <Link href="/contact" className="btn-primary">Request a consultation</Link>
+            <a href="/ScadaFortis_OnePager_2026.pdf" target="_blank" rel="noreferrer" style={{ fontSize: 12, color: '#7A9BB5', textDecoration: 'none', fontFamily: "'IBM Plex Mono', monospace" }}>
+              or <span style={{ color: '#00C8C8' }}>download capability statement →</span>
+            </a>
+          </div>
         </div>
       </div>
       <style>{`@media (max-width: 1024px) { .srv-grid { grid-template-columns: 1fr 1fr !important; } } @media (max-width: 640px) { .srv-grid { grid-template-columns: 1fr !important; } }`}</style>
