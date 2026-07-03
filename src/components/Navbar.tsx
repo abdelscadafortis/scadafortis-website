@@ -9,7 +9,9 @@ const links = [
   { href: '/services', label: 'Services' },
   { href: '/expertise', label: 'Expertise' },
   { href: '/projects', label: 'Projects' },
+  { href: '/case-studies', label: 'Case Studies' },
   { href: '/resources', label: 'Resources' },
+  { href: '/availability', label: 'Availability' },
   { href: '/contact', label: 'Contact' },
 ]
 
