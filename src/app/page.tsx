@@ -36,6 +36,9 @@ export default function HomePage() {
               <Link href="/contact" className="btn-primary">Request a consultation</Link>
               <Link href="/projects" className="btn-outline">View projects</Link>
             </div>
+            <a href="/ScadaFortis_OnePager_2026.pdf" target="_blank" rel="noreferrer" style={{ display: 'inline-block', marginTop: 14, fontSize: 13, color: '#7A9BB5', textDecoration: 'none', fontFamily: "'IBM Plex Mono', monospace" }}>
+              Not ready to talk? <span style={{ color: '#00C8C8' }}>Download the capability statement →</span>
+            </a>
             <div className="hero-tags">
               {['IEC 61850', 'IEC 62443', 'IEC 61400-25', 'HVDC', 'NIS2'].map(tag => (
                 <span key={tag} className="tech-tag">{tag}</span>
