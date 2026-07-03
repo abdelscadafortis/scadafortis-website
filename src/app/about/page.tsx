@@ -17,7 +17,7 @@ export default function AboutPage() {
 
         <div className="about-profile">
           <div className="profile-left">
-            <div className="profile-avatar">AE</div>
+            <img src="/abdel-headshot.jpg" alt="Abdelmounaim Errouchi" className="profile-photo" />
             <div>
               <div className="profile-name">Abdelmounaim Errouchi</div>
               <div className="profile-role">Founder — Scada Fortis</div>
@@ -80,7 +80,7 @@ export default function AboutPage() {
         .page-title { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(2rem, 5vw, 3.4rem); font-weight: 800; text-transform: uppercase; letter-spacing: 0.02em; max-width: 640px; line-height: 1.1; margin: 0 0 48px; }
         .about-profile { background: rgba(0,30,48,0.7); border: 1px solid rgba(0,160,160,0.2); border-radius: 12px; padding: 40px; margin-bottom: 48px; display: grid; grid-template-columns: 280px 1fr; gap: 40px; align-items: start; }
         .profile-left { display: flex; flex-direction: column; gap: 14px; }
-        .profile-avatar { width: 72px; height: 72px; border-radius: 50%; background: rgba(0,160,160,0.1); border: 2px solid rgba(0,160,160,0.3); display: flex; align-items: center; justify-content: center; font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 24px; color: #00C8C8; }
+        .profile-photo { width: 96px; height: 96px; border-radius: 50%; object-fit: cover; border: 2px solid rgba(0,160,160,0.35); box-shadow: 0 0 0 4px rgba(0,160,160,0.08); }
         .profile-name { font-size: 18px; font-weight: 600; color: white; margin-bottom: 3px; }
         .profile-role { font-size: 13px; color: #00C8C8; margin-bottom: 3px; }
         .profile-edu { font-size: 12px; color: #4A6880; font-family: 'IBM Plex Mono', monospace; }
